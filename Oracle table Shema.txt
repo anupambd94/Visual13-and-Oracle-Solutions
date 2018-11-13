@@ -1,0 +1,27 @@
+https://localhost:1158/em
+
+
+Tables:
+
+create table Incomes( id int(10),
+fname varchar2(25),
+lname varchar2(25),
+constraint pk_emp_id PRIMARY KEY(emp_id)
+);
+
+Create sequence SysGroupAccount_sequence start with 1
+increment by 1
+minvalue 1
+maxvalue 10000;
+
+CREATE OR REPLACE TRIGGER SysGroupAccount_bir 
+BEFORE INSERT ON SysGroupAccount 
+FOR EACH ROW
+
+BEGIN
+  SELECT SysGroupAccount_sequence.NEXTVAL
+  INTO   :new.id
+  FROM   dual;
+END;
+
+insert into SysAccountType valuse('123','efef','???','dfef','dfef','efefs',12/12/2012);

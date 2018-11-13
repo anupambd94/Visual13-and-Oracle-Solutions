@@ -1,0 +1,3 @@
+=> enable-migrations or Enable-Migrations -EnableAutomaticMigrations -Force
+=>Add-Migration Initial
+=>Update-Database

@@ -1,0 +1,3 @@
+PM=> Install-Package EntityFramework -Version 6.0.0 
+PM=> Install-Package Oracle.ManagedDataAccess -Version 12.1.22
+PM> Install-Package Oracle.ManagedDataAccess.EntityFramework -Version 12.1.22

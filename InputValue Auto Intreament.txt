@@ -1,0 +1,18 @@
+
+
+ 	CRUDOperation.Models.Database database = new Models.Database();
+            //sort the employee and get the last insert employee.
+            //var ACC= db.Employees.OrderByDescending(c => c.ID).FirstOrDefault();
+
+            var lastAccount = db.MyDatabase.OrderByDescending(c => c.AccountCode).FirstOrDefault();
+            if (lastAccount == null)
+            {
+                database.AccountCode = "12";
+            }
+            else
+            {
+                //using string substring method to get the number of the last inserted employee's EmployeeID 
+                database.AccountCode = "12" + (Convert.ToInt32(lastAccount.AccountCode.Substring(2, lastAccount.AccountCode.Length - 2)) + 1).ToString("D1");
+            }
+
+            return View(database);

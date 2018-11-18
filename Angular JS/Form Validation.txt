@@ -1,0 +1,45 @@
+https://scotch.io/tutorials/angularjs-form-validation
+Requirements
+----------------
+Name is required
+Username is not required, minimum length 3, maximum length 8
+Email is not required, but has to be a valid email
+Form submit is disabled if the form isn't valid
+Show a required or invalid email error
+Alert awesome if submitted correctly
+
+
+----------------
+Angular provides properties on forms that help us validate them. They give us various information about a form or its inputs and are applied to a form and inputs.
+---------------------------------------------------
+Property	Class	Description
+$valid	ng-valid	Boolean Tells whether an item is currently valid based on the rules you placed.
+$invalid	ng-invalid	Boolean Tells whether an item is currently invalid based on the rules you placed.
+$pristine	ng-pristine	Boolean True if the form/input has not been used yet.
+$dirty	ng-dirty	Boolean True if the form/input has been used.
+$touched	ng-touched	Boolean True if the input has been blurred.
+
+
+----------------------------
+Accessing Angular Form Properties
+----------------------------------
+To access the form: <form name>.<angular property>
+To access an input: <form name>.<input name>.<angular property>
+
+-----------------------------
+Add Index.html and app.js file..
+----------------------------
+A few key points to note here:
+
+novalidate: This will prevent the default HTML5 validations since we'll be doing that ourselves (ours will be much prettier)
+We have applied ng-model to our inputs so that we have data from our forms bound to Angular variables
+ng-minlength and ng-maxlength on username will create those rules
+The name input is required
+The email input is type="email"
+
+
+-----------------
+Unique Value:
+https://weblogs.asp.net/dwahlin/building-a-custom-angularjs-unique-value-directive
+https://techbrij.com/angularjs-asp-net-mvc-username-check
+-----------------------

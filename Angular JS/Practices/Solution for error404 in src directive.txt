@@ -1,0 +1,58 @@
+Adding Images path in Angular:
+-----------------------------------
+var myApp = angular
+    .module("myModule", [])
+    .controller("myController", function ($scope) {
+    var Country = {
+        Name: "Bangladesh",
+        Capital : "Dhaka",
+        Flag: "/Images/BD_Flag.png"
+    };
+        
+    $scope.Country = Country;
+$scope.Message = "Our Country";
+
+});
+
+How to use:
+----------------
+<html ng-app="myModule"> @*Adding the module name*@
+<head>
+    <title>Angular JS</title>
+    <script src="~/Scripts/angularJs.js"></script>
+    <script src="~/Scripts/Script.js"></script>
+</head>
+<body ng-controller="myController"> @*Adding the controller name*@
+
+    <div>
+        <h1>{{Message}}</h1> @*Using the variables...*@
+
+    </div>
+    <div>
+        Name : {{Country.Name}}
+    </div>
+    <div>
+        Capital : {{Country.Capital}}
+    </div>
+    <div>
+        <img src="{{Country.Flag}}" style="height:40px; width:80px" />
+    </div>
+</body>
+</html>
+
+Resolving the 404 error:
+--------------------------
+<img src="{{Country.Flag}}" style="height:40px; width:80px" />
+// Here the saerver is calld 2nd times.
+1. By the src fuction:src="......."
+2. by the AngularJs Bind:...{{Country.Flag}}...
+
+the error is for 1. no call. the src does not find the valid path.thats whay its showing error 404;
+but the 2. call is successfully done...
+
+Solution:
+We need to use ng-src instade of src: 
+
+
+
+

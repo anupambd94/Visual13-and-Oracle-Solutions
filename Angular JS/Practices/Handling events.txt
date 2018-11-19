@@ -1,0 +1,83 @@
+event handling in angularjs
+angularjs ng click example
+angularjs ng click event
+
+In this video we will discuss how to handle events in AngularJS.
+
+Let us understand with an example. Here is what we want to do.
+
+1. Display the list of technologies in a table
+2. Provide the ability to ike and dislike a technology
+3. Increment the likes and dislikes when the respective buttons are clicked
+
+Script.js : In the controller function we have 2 methods to increment likes and dislikes. Both the functions have the technology object that we want to like or dislike as a parameter. 
+--------------------------------
+Angular Code:
+-------------------------
+var myApp = angular
+    .module("myModule", [])
+    .controller("myController", function ($scope) {
+        var ProgrammingLangulages = [
+            { name: "Java", Likes: "0", Dislikes: "0" },
+            { name: "JavaSript", Likes: "0", Dislikes: "0" },
+            { name: "Asp.NET", Likes: "0", Dislikes: "0" },
+            { name: "PHP", Likes: "0", Dislikes: "0" },
+            { name: "Angular", Likes: "0", Dislikes: "0" }
+        ];
+
+        $scope.IncreamentLikes = function (ProgrammingLangulages) {
+            ProgrammingLangulages.Likes++;
+        }
+        $scope.IncreamentDislikes = function (ProgrammingLangulages) {
+            ProgrammingLangulages.Dislikes++;
+        }
+        
+        
+        $scope.ProgrammingLangulages = ProgrammingLangulages;
+        $scope.Message = "Programming Langulage Popularity";
+
+});
+
+------------------------------
+Html Code:
+---------------------------------
+HtmlPage1.html : Notice in the html below, we are associating incrementLikes() and incrementDislikes() functions with the respective button. When any of these buttons are clicked, the corresponsing technology object is automatically passed to the function, and the likes or dislikes property is incremented depending on which button is clicked.
+
+<html ng-app="myModule"> @*Adding the module name*@
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>Angular JS</title>
+    <script src="~/Scripts/angularJs.js"></script>
+    <script src="~/Scripts/Script.js"></script>
+    
+</head>
+<body ng-controller="myController"> @*Adding the controller name*@
+
+    <div>
+        <h1>{{Message}}</h1> @*Using the variables...*@
+
+    </div>
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Likes</td>
+                <td>Dislikse</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="anyObj
+                ectName in ProgrammingLangulages">
+                <td>{{anyObjectName.name}}</td>
+                <td>{{anyObjectName.Likes}}</td>
+                <td>{{anyObjectName.Dislikes}}</td>
+                <td>
+                    <input type="button" value="Like" ng-click="IncreamentLikes(anyObjectName)" />
+                    <input type="button" value="Dislike" ng-click="IncreamentDislikes(anyObjectName)" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

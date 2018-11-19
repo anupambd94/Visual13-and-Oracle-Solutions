@@ -1,0 +1,98 @@
+angularjs ng-repeat example
+ng-repeat simple example
+ng-repeat simple array
+angularjs ng repeat nested array
+angularjs ng repeat index example
+------------------------------------
+In this video we will discuss 
+1. ng-repeat directive in Angular
+2. Nesting ng-repeat with an example
+
+ng-repeat is similar to foreach loop in C#. 
+
+Let us understand this with an example. Here is what we want to do.
+1. For each employee we have in the employees array we want a table row. With in each cell of the table row we to display employee
+Firstname
+Lastname
+Gender
+Salary
+
+This can be achieved very easily using ng-repeat directive.
+
+HtmlPage1.html : In the view, we are using ng-repeat directive which loops thru each employee in employees array. For each employee, we a get a table row, and in each table cell of the table row, the respective employee details (Firstname, Lastname, Gender, Salary) are retrieved using the angular binding expression.
+
+Nested ng-repeat example : The model contains an array of countries, and each country has an array of cities. The view must display cities nested under their respective country.
+
+Finding the index of an item in the collection : 
+To find the index of an item in the collection use $index property
+To get the index of the parent element
+ Use $parent.$index or
+ Use ng-init="parentIndex = $index"
+-------------------------------------------------
+var myApp = angular
+    .module("myModule", [])
+    .controller("myController", function ($scope) {
+        var Countrees = [
+            {
+                Name: "Bangladesh",
+                Capital: "Dhaka",
+                cities: [
+                    { name: "Dhaka"},
+                    { name: "khulna" },
+                    { name: "Chitagong" }
+                ]
+            },
+            {
+                Name: "India",
+                Capital: "New Delhi",
+                cities: [
+                    { name: "kalkata" },
+                    { name: "Dilhi" },
+                    { name: "New delhi" }
+                ]
+            },
+            {
+                Name: "Pakistan",
+                Capital: "Karachi",
+                cities: [
+                    { name: "karachi" },
+                    { name: "Ambani" },
+                    { name: "Some More" }
+                ]
+            }
+        ];
+        
+        
+        $scope.Countrees = Countrees;
+        $scope.Message = "Countiees";
+
+});
+
+How to use:
+----------------
+<div>
+        <h1>{{Message}}</h1> @*Using the variables...*@
+
+    </div>
+    <table>
+        <thead>
+            <tr>
+            <td>Name</td>
+            <td>Capital</td>
+            <td>Cities</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="anyObjectName in Countrees">
+                <td>{{anyObjectName.Name}}</td>
+                <td>{{anyObjectName.Capital}}</td>
+                <td >
+                    <ul>
+                        <li ng-repeat="anotherObjectName in anyObjectName.cities">
+                            {{anotherObjectName.name}}
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>

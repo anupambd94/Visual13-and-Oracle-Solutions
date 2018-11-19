@@ -43,4 +43,18 @@ How to use:
 </body>
 </html>
 
-H
+Create with method chaining:
+---------------------------------
+var myApp = angular
+    .module("myModule", [])
+    .controller("myController", function ($scope) {
+    var employee = {
+        firstName: "Anupam Hayat",
+        lastName : "Shawon",
+        gender: "Male"
+    };
+        
+$scope.employee = employee;
+$scope.Message = "Angular Js Practice";
+
+});

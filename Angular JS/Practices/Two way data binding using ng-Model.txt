@@ -1,0 +1,20 @@
+    
+Note: When we use ng-model... and then change the value.. it will autometically change the value in model...
+
+</div>
+    <div>
+        Country Name : <input type="text" ng-model="Country.Name"/> @*two way data binding usin ng-model*@
+    </div>
+    <div>
+        Capital : <input type="text" ng-model="Country.Capital" />@*two way data binding usin ng-model*@
+    </div>
+    <hr>
+    <div>
+        Name : {{Country.Name}}
+    </div>
+    <div>
+        Capital : {{Country.Capital}}
+    </div>
+    <div>
+       National Flag : <img ng-src="{{Country.Flag}}" alt="{{Country.name + 'Flag' }}" style="height:40px; width:80px" />
+    </div>

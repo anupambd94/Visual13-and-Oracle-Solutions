@@ -1,0 +1,23 @@
+Objects:
+-------------
+myApp.controller("myController", function ($scope) {
+    var employee = {
+        firstName: "Anupam Hayat",
+        lastName : "Shawon",
+        gender: "Male"
+    };
+        
+$scope.employee = employee;
+
+
+How to use:
+-----------------
+    <div>
+        Fisrt Name : {{employee.firstName}}
+    </div>
+    <div>
+        Last Name : {{employee.lastName}}
+    </div>
+    <div>
+        Gender : {{employee.gender}}
+    </div>

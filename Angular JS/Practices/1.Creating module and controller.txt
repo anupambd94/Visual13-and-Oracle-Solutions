@@ -1,0 +1,46 @@
+How to Create:
+------------------------------------------------------
+1)=> Create a Script File
+2)=> link with the angularJs file
+--------------------------
+// first step:creating a angular module...
+var myApp = angular.module("myModule", []);
+
+//// Second Step: Create a controller dunction
+//var myController = function ($scope) {
+//    $scope.Message = "Angular Js Practice";
+//}
+
+////Third Step: Register the Controller with the module...
+
+//myApp.controller("myController", myController);
+
+
+//done these in one single line.....
+
+myApp.controller("myController", function ($scope) {
+    $scope.Message = "Angular Js Practice";
+});
+
+
+How to use:
+----------------------------------------------------------
+<html ng-app="myModule"> @*Adding the module name*@
+<head>
+    <title>Angular JS</title>
+    <script src="~/Scripts/angularJs.js"></script>
+    <script src="~/Scripts/Script.js"></script>
+</head>
+<body ng-controller="myController"> @*Adding the controller name*@
+
+    <div>
+        <h1>{{Message}}</h1> @*Using the variables...*@
+
+    </div>
+    <div>
+        10 + 20 = {{10+20}}
+    </div>
+</body>
+</html>
+
+H

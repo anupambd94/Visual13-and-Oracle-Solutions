@@ -1,4 +1,4 @@
-Adding Images path in Angular:
+Adding Images path in AngularJs:
 -----------------------------------
 var myApp = angular
     .module("myModule", [])
